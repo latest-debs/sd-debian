@@ -1,0 +1,46 @@
+{
+  "gate": "pass",
+  "license": {
+    "declared": "MIT",
+    "detected": [
+      "MIT"
+    ],
+    "license_files": [
+      "//tmp/tmp.m6LaG7EHAe/x/sd-v1.1.0-aarch64-unknown-linux-musl/LICENSE"
+    ],
+    "matches": true,
+    "status": "pass",
+    "detail": "declared MIT matches detected MIT"
+  },
+  "asset": {
+    "format": "tar.gz",
+    "size": 924956,
+    "valid": true,
+    "is_html": false,
+    "binary": "sd",
+    "elf_arch": "ARM aarch64",
+    "status": "pass",
+    "detail": "valid tar.gz archive containing 1 ELF executable(s); first: sd (ARM aarch64); release covers: amd64 arm64 armhf "
+  },
+  "architectures": {
+    "covered": [
+      "amd64",
+      "arm64",
+      "armhf"
+    ],
+    "missing": [
+      "armel",
+      "i386",
+      "ppc64el",
+      "s390x",
+      "riscv64",
+      "loong64"
+    ],
+    "assets": {
+      "amd64": "sd-v1.1.0-x86_64-unknown-linux-gnu.tar.gz",
+      "arm64": "sd-v1.1.0-aarch64-unknown-linux-musl.tar.gz",
+      "armhf": "sd-v1.1.0-arm-unknown-linux-gnueabihf.tar.gz"
+    }
+  },
+  "vetted_at": "2026-08-26T04:33:21Z"
+}

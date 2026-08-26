@@ -1,0 +1,9 @@
+# Package definition for sd
+
+package_name: sd
+github_repo: chmln/sd
+artifact_format: tar.gz
+description: "Intuitive find __DESCRIPTION__ replace CLI (sed alternative)"
+license: MIT
+
+# Build for all Debian suites and all supported architectures.
