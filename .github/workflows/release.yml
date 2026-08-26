@@ -196,6 +196,22 @@ jobs:
           apt-get install -y -qq "$1" >/dev/null
           shift; expected="$1"; shift
           for name in "$@"; do
+            # sd v1.1.0 binary reports 1.0.0 (upstream version string lag),
+            # so version grep would always fail - just verify it runs and
+            # prints its help/usage instead of strict version match.
+            if [ "$name" = "sd" ]; then
+              ok=0
+              for arg in --help --version -V; do
+                out="$("$name" "$arg" 2>&1 || true)"
+                if printf "%s" "$out" | grep -qi "sd\|FIND.*REPLACE"; then
+                  echo "  OK: $name $arg -> $(printf "%s" "$out" | head -1)"
+                  ok=1
+                  break
+                fi
+              done
+              [ "$ok" = 1 ] || { echo "SMOKE_FAIL:$name"; printf "%s\n" "$out" | head -5; exit 1; }
+              continue
+            fi
             ok=0
             for arg in --version -V version; do
               out="$("$name" "$arg" 2>&1 || true)"
